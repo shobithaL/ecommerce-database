@@ -97,7 +97,12 @@ FROM Customers
 RIGHT JOIN Orders
 ON Customers.CustomerID = Orders.CustomerID;
 
-SELECT *
-FROM Customers
-FULL OUTER JOIN Orders
+SELECT * 
+FROM Customers 
+LEFT JOIN Orders 
 ON Customers.CustomerID = Orders.CustomerID
+UNION
+SELECT * 
+FROM Customers 
+RIGHT JOIN Orders 
+ON Customers.CustomerID = Orders.CustomerID;
